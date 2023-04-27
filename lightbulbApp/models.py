@@ -4,18 +4,19 @@ from django.contrib.auth.models import User
 
 # Model created for each post to blog
 
+
 class Post(models.Model):
     # cascade deletes post if user is removed or deleted
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    slug = models.SlugField(default="", max_length=200, unique=True, null=False)
     title = models.CharField(max_length=200)
+    slug = models.SlugField(default="", max_length=200, unique=True, null=False)
     description = models.TextField(max_length=500, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     # sets default title, sets default ordering 
 
-    def __str_(self):
+    def __str__(self):
         return self.title
 
     def number_of_likes(self):
