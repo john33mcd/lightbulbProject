@@ -1,32 +1,31 @@
-
 {% extends "base.html" %}
 
 {% block content %}
 
 <div class="hero">
-    
-<p>this is a title</p>
+
+    <p>this is a title</p>
 </div>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
+        <div class="col-12 mt-3">
             <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-4">
+                <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-body">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
+                            <div>
+                                <p class="author">Author: {{ post.author }}</p>
+                            </div>
                             <a href="{% url 'comments' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <!-- <p class="card-text">{{ post.excerpt }}</p> -->
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                            <p class="card-text text-muted h6">{{ post.created}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
                     </div>
@@ -55,4 +54,4 @@
     </nav>
     {% endif %}
 </div>
-{%endblock%}
+{%endblock content%}

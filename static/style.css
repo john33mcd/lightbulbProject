@@ -20,10 +20,29 @@ p {
 }
 
 .hero{
-    height: 70vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
     margin: auto;
-    background-color: black;
+    background: #FCFAEE;
     color: white;
+}
+
+.card-body{
+    background-color: #FCFAEE;
+}
+
+.navbar{
+    background-color: #8A865D;
+}
+
+body{
+    background-color: #faf7e9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    margin-top: auto;
 }
