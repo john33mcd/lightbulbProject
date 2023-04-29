@@ -4,6 +4,7 @@ from .models import Post
 from django.urls import reverse_lazy
 
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LogoutView
 
 
 # fields are already created in loginview template
