@@ -2,9 +2,17 @@
 
 {% block content %}
 
+
 <div class="hero">
 
-    <p>this is a title</p>
+    {% if request.user.is_authenticated %}
+    <h1> Hi {{request.user}}, welcome to lightbulb !</h1>
+    <a href="">logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    
+
 </div>
 
 <div class="container">

@@ -1,11 +1,16 @@
 /* 
 font-family: 'Playfair Display', serif;
-font-family: 'Roboto', sans-serif; */
+font-family: 'Roboto', sans-serif; 
+font-family: 'EB Garamond', serif;
+*/
 
 h1{
+    color: #96951B;
+    font-family: 'EB Garamond', serif;
+    padding-top: 30px;
 
+    
 }
-
 h2,
 h3,
 h4,

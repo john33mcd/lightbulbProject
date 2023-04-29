@@ -1,6 +1,19 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Post
+from django.urls import reverse_lazy
+
+from django.contrib.auth.views import LoginView
+
+
+# fields are already created in loginview template
+class myLoginView(LoginView):
+    template_name = 'login.html'
+    fields = '__all__'
+    redirect_authenticated_user = True
+
+    def get_success_url(self):
+        return reverse_lazy("PostList")
 
 
 class PostList(generic.ListView):
