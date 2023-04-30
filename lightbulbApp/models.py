@@ -15,7 +15,7 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    # sets default title, sets default ordering 
+    # sets default title, sets default ordering
 
     def __str__(self):
         return self.title
@@ -31,7 +31,8 @@ class Post(models.Model):
 
 class Comment(models.Model):
 
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=80)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)

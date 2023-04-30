@@ -51,3 +51,13 @@ body{
 footer{
     margin-top: auto;
 }
+
+.formCard{
+    height: 70vh;
+    width: 70vw;
+    margin: 10%;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
