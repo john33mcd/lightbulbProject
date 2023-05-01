@@ -9,7 +9,7 @@ class Post(models.Model):
     # cascade deletes post if user is removed or deleted
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
-    slug = models.SlugField(default="", max_length=200, unique=True, null=False)
+    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts", default="1")
     description = models.TextField(max_length=500, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
