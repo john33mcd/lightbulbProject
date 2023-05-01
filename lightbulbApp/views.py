@@ -22,7 +22,7 @@ class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.order_by('created')
     template_name = 'index.html'
-    context_object_name = 'posts'
+    context_object_name = 'post_list'
     paginate_by = 6
 
 
