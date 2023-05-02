@@ -65,9 +65,9 @@ class RegisterPage(FormView):
         return super(RegisterPage, self).form_valid(form)
 
 
-class CreateTask(CreateView):
+class PostCreate(CreateView):
     model = Post
-    fields = ['title', 'author', 'description']
-    template_name = 'createTask.html'
+    fields = '__all__'
+    exclude = 'slug'
+    template_name = 'post_form.html'
     success_url = reverse_lazy('index')
-
