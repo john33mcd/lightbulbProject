@@ -2,7 +2,9 @@
 
 {% block content %}
 
+
 <div class="formCard">
+    <a href="{% url 'index' %}">Return home</a>
 <form method="POST">
     {% csrf_token %}
     <!-- django creates model form  -->

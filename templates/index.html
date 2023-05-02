@@ -15,7 +15,9 @@
 
 </div>
 <div class="addItem">
-    <a href="{% url 'post_create' %}"> Would you like to share an idea ? </a>
+    <a href="{% url 'post_create'  %}"> Would you like to share an idea ? </a>
+    <hr>
+    <a href="#"> Would you like to update an idea ? </a>
 </div>
 
 <div class="container">
@@ -44,6 +46,8 @@
             </div>
             <div class="row">
                 {% endif %}
+                {% empty %}
+                <h2> No posts are available at this time</h2>
                 {% endfor %}
 
             </div>

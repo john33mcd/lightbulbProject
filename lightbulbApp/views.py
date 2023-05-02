@@ -7,7 +7,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
-from django.views.generic.edit import CreateView, FormView
+from django.views.generic.edit import CreateView, FormView, UpdateView
 
 
 # fields are already created in loginview template
@@ -68,6 +68,11 @@ class RegisterPage(FormView):
 class PostCreate(CreateView):
     model = Post
     fields = '__all__'
-    exclude = 'slug'
     template_name = 'post_form.html'
+    success_url = reverse_lazy('index')
+
+
+class PostUpdate(UpdateView):
+    model = Post
+    fields = '__all__'
     success_url = reverse_lazy('index')
