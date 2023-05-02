@@ -7,7 +7,6 @@
 
     {% if request.user.is_authenticated %}
     <h1 class="centreText"> Hi {{request.user}}, welcome to lightbulb !</h1>
-    <a href="{% url 'logout' %}">logout</a>
     {% else %}
     <a href="{% url 'login' %}">Login</a>
     {% endif %}
